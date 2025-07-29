@@ -26,7 +26,7 @@ jobs:
       - name: Build # React Build
         run: npm run build # npm run build를 실행할 경로로 설정
 
-      - name: Deploy # S3에 배포하기
+      - name: Deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -36,4 +36,3 @@ jobs:
             --region ap-northeast-2 \
             dist s3://parkseeun-bucket
 
-      # 메모장에 적어둔 본인의 bucket 이름과 리전으로 변경하기
